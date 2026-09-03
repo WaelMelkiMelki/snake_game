@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b121d" />
+  <meta name="description" content="Snek — a tiny, fast, installable snake PWA. Play offline, beat your high score." />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Snek" />
+  <title>Snek — Snake PWA</title>
+
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <link rel="icon" type="image/png" href="/icons/icon-192.png" />
+  <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <h1 class="logo">🐍 snek</h1>
+      <div class="stats" aria-label="Score and best">
+        <div class="stat">
+          <span class="stat-label">score</span>
+          <span id="score" class="stat-value">0</span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">best</span>
+          <span id="best" class="stat-value">0</span>
+        </div>
+      </div>
+      <button id="soundBtn" class="icon-btn" aria-label="Toggle sound" title="Toggle sound">🔊</button>
+    </header>
+
+    <section class="game-wrap">
+      <canvas id="game" width="600" height="600" aria-label="Snake game board"></canvas>
+
+      <div id="overlay" class="overlay">
+        <div class="panel">
+          <h2 id="overlayTitle">snek</h2>
+          <p id="overlayText">Eat apples, grow long, don't bump yourself.</p>
+          <button id="startBtn" class="btn primary">▶ Play</button>
+          <button id="installBtn" class="btn secondary" hidden>⬇ Install App</button>
+          <p class="hint">Arrows / WASD / swipe to move · Space to pause</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="pad" aria-label="Touch controls">
+        <button class="pad-btn" data-dir="up" aria-label="Move up">▲</button>
+        <button class="pad-btn" data-dir="left" aria-label="Move left">◀</button>
+        <button class="pad-btn" data-dir="pause" aria-label="Pause or resume">⏸</button>
+        <button class="pad-btn" data-dir="right" aria-label="Move right">▶</button>
+        <button class="pad-btn" data-dir="down" aria-label="Move down">▼</button>
+      </div>
+      <p class="offline">Works offline · installable PWA</p>
+    </footer>
+  </main>
+
+  <script src="/app.js" defer></script>
+</body>
+</html>
